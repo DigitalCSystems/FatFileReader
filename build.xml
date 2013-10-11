@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<project default="FatFileReader">
+
+	<property name="src" location="src" />
+	<property name="output" location="bin" />
+	
+    <target name="FatFileReader" depends="compile, archive">
+        <echo>
+            Building the .jar file.
+        </echo>
+    </target>
+  
+    <target name="compile">    	
+        <javac srcdir="${src}" destdir="${output}" target="1.5" />
+    </target>
+	
+	 <target name="archive">
+	 	<echo>${output}</echo>
+	        <jar destfile="fatfile.jar" basedir="${output}" includes="" filesonly="false" />
+	  </target>
+
+</project>
